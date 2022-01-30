@@ -1,19 +1,21 @@
 import { useState } from 'react';
 import productsData from '../../data/products';
-import Product from '../Product/Product';
+import Product from './Product/Product';
 
 const Products = () => {
   const [products]  = useState(productsData);
   // console.log('products:', products);
-return (
- <section>
-   {products.map(products => <Product key={products.id} id={products.id} basePrice={products.basePrice}  title={products.title} colors={products.colors} sizes={products.sizes} name={products.name}/>)}
- </section>
-)
+  return (
+    <section>
+      {products.map(product => <Product key={product.id} data={product} />)}
+    </section>
+  )
  
 };
 
 export default Products;
+
+ /* {products.map(product => <Product key={product.id} id={product.id} basePrice={product.basePrice}  title={product.title} colors={product.colors} sizes={product.sizes} name={product.name}/>)} */
 
 // return (
 //   <section>
